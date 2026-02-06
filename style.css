@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* TOP STICKER */
+.sticker-box img {
+    width: 220px;
+    margin-bottom: 30px;
+}
+
+/* WHITE CARD */
+.card {
+    background: white;
+    width: 320px;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.card h1 {
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+/* BUTTONS */
+.btns button {
+    padding: 10px 22px;
+    margin: 10px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+.yes {
+    background: #ff4d6d;
+    color: white;
+}
+
+.no {
+    background: #ffd6e0;
+}

@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom, #ff9a9e, #fecfef);
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
+
+/* MAIN CONTENT */
+.container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding-top: 40px;
+}
+
+/* TOP STICKER */
+.top-sticker {
+    width: 220px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #b3003b;
+    margin-bottom: 30px;
+}
+
+/* LETTER */
+.letter {
+    display: inline-block;
+    padding: 12px 25px;
+    background: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* MESSAGE BOX */
+.message {
+    display: none;
+    margin: 30px auto;
+    width: 85%;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* FALLING HEARTS */
+.petals span {
+    position: fixed;
+    top: -10%;
+    font-size: 28px;
+    animation-name: fall;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: 1;
+}
+
+/* UNEVEN POSITIONS + SPEED */
+.petals span:nth-child(1) { left: 5%;  animation-duration: 12s; }
+.petals span:nth-child(2) { left: 18%; animation-duration: 18s; }
+.petals span:nth-child(3) { left: 32%; animation-duration: 14s; }
+.petals span:nth-child(4) { left: 47%; animation-duration: 20s; }
+.petals span:nth-child(5) { left: 60%; animation-duration: 13s; }
+.petals span:nth-child(6) { left: 72%; animation-duration: 17s; }
+.petals span:nth-child(7) { left: 85%; animation-duration: 15s; }
+.petals span:nth-child(8) { left: 95%; animation-duration: 22s; }
+
+@keyframes fall {
+    0% {
+        top: -10%;
+        opacity: 1;
+    }
+    100% {
+        top: 110%;
+        opacity: 0;
+    }
+}
+.play-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 25px;
+    background: #ff4d6d;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 3;
+}
