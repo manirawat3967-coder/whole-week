@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Propose Day ❤️</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #ff99cc; /* pink background */
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    h1 {
+      margin-top: 60px;
+      font-size: 36px;
+    }
+
+    /* Sticker */
+    .sticker {
+      margin: 20px auto 10px auto;
+      width: 150px;
+      display: block;
+    }
+
+    /* Heart button */
+    .heart-btn {
+      font-size: 60px;
+      cursor: pointer;
+      margin-top: 30px;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .click-text {
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
+    /* Message */
+    .message {
+      max-width: 90%;
+      margin: 30px auto;
+      font-size: 18px;
+      line-height: 1.6;
+      display: none;
+      animation: slideUp 1.2s ease forwards;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .bold {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    /* YES / NO buttons */
+    .response-btn {
+      font-size: 22px;
+      padding: 10px 30px;
+      margin: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform 0.2s;
+    }
+
+    .response-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .yes-btn {
+      background-color: #00cc66;
+      color: white;
+    }
+
+    .no-btn {
+      background-color: #ff3300;
+      color: white;
+    }
+
+    /* Falling hearts & rings */
+    .fall {
+      position: fixed;
+      top: -50px;
+      font-size: 24px;
+      animation: fall linear infinite;
+      opacity: 0.9;
+    }
+
+    @keyframes fall {
+      to { transform: translateY(110vh); }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h1>Happy Propose Day ❤️</h1>
+
+  <!-- Sticker2 -->
+  <img src="sticker2.png" class="sticker" alt="sticker2">
+
+  <!-- Heart -->
+  <div class="heart-btn" onclick="showMessage()">❤️</div>
+  <div class="click-text">click this heart</div>
+
+  <!-- Message -->
+  <div class="message" id="msg">
+    Will you be my valentine for rest of my life 💖<br>
+    You are my kuchupuchu yar 🥺❤️<br><br>
+
+    is br m Fir sa tumha 3 bar I love youuuuu❤️<br>
+    I loveeeee youuuu ❤️<br>
+    I lovvee youuu ❤️<br><br>
+
+    bolri hun or sunaa hon to is najis ko call kroo 📞😤<br>
+    tumhari bonita hun m 😌💃<br>
+    waise tum senty ho ya blush kr Rahe ho hannn hn😚🤭🤭<br><br>
+
+    Orr soniyoo janeman meri babygirl 💕<br>
+    Kas tumhari Kamara pkd kr propose krti pr Khair koi ni 😭❤️<br>
+    waise abhi merepa ring nahi hai propose krna jo bss ek mssg hai....<br><br>
+
+    <div class="bold">
+      ARE YOU READY TO LIVE YOUR WHOLE LIFE WITH THIS PAGAL LADKI  
+      WHO IS IN DEEP LOVE WITH YOU ? 💍
+    </div>
+
+    <!-- YES / NO buttons -->
+    <div>
+      <button class="response-btn yes-btn" onclick="goYes()">YES</button>
+      <button class="response-btn no-btn" onclick="goNo()">NO</button>
+    </div>
+  </div>
+
+  <script>
+    // Show message
+    function showMessage() {
+      document.getElementById("msg").style.display = "block";
+    }
+
+    // Go to YES page
+    function goYes() {
+      window.location.href = "yes.html"; // replace with your YES gif page
+    }
+
+    // Go to NO page
+    function goNo() {
+      window.location.href = "no.html"; // replace with your NO gif page
+    }
+
+    // Falling hearts & rings
+    const symbols = ["❤️", "💍"];
+    for (let i = 0; i < 30; i++) {
+      let fall = document.createElement("div");
+      fall.className = "fall";
+      fall.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+      fall.style.left = Math.random() * 100 + "vw";
+      fall.style.animationDuration = (3 + Math.random() * 5) + "s";
+      fall.style.fontSize = (18 + Math.random() * 20) + "px";
+      document.body.appendChild(fall);
+    }
+  </script>
+
+</body>
+</html>

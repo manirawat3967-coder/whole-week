@@ -1,31 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Valentine Surprise 💖</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Kiss Day 💋</title>
+<style>
+  body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    font-family:'Poppins',sans-serif;
+    overflow:hidden;
+  }
+
+  /* 💋 KISS RAIN */
+  .kiss{
+    position:fixed;
+    top:-50px;
+    font-size:30px;
+    opacity:0.4;
+    animation: fall linear infinite;
+  }
+
+  @keyframes fall{
+    to{
+      transform:translateY(110vh);
+    }
+  }
+
+  .box{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    width:300px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    z-index:2;
+  }
+
+  h2{ color:#ff4d6d; }
+
+  button{
+    width:100%;
+    margin:8px 0;
+    padding:12px;
+    border:none;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    background:#ff4d6d;
+    color:white;
+  }
+
+  button:hover{ background:#e63956; }
+
+  .hidden{ display:none; }
+
+  img{
+    width:120px;
+    margin-bottom:10px;
+  }
+
+  .gif{
+    width:180px;
+    border-radius:15px;
+  }
+</style>
 </head>
+
 <body>
 
-<div class="main">
+<!-- FRONT PAGE -->
+<div class="box" id="question">
+  <img src="front-sticker.png" alt="sticker">
+  <h2>Yesterday was just a trailer 😏</h2>
+  <p>Before the kiss… ek chhota sa question 💕</p>
+  <p><b>Where should the kiss be? 💋</b></p>
 
-    <!-- UPPER STICKER -->
-    <div class="sticker-box">
-        <img src="cute.png">
-    </div>
-
-    <!-- WHITE BOX -->
-    <div class="card">
-        <h1>Do you want to see what is inside? 😏</h1>
-
-        <div class="btns">
-            <button class="yes" onclick="yesClick()">Yes 😘</button>
-            <button class="no" onclick="noClick()">No 🥺</button>
-        </div>
-    </div>
-
+  <button onclick="wrong()">Forehead 😇</button>
+  <button onclick="wrong()">Cheeks 😊</button>
+  <button onclick="right()">Lips 😘</button>
 </div>
 
-<script src="script.js"></script>
+<!-- WRONG -->
+<div class="box hidden" id="wrongBox">
+  <h2>Awww 🥹</h2>
+  <p>Cute ho tum…</p>
+  <p>But aaj thoda bold bano 😏</p>
+  <button onclick="goBack()">Try Again 🔁</button>
+</div>
+
+<!-- RIGHT -->
+<div class="box hidden" id="rightBox">
+  <img src="kiss.gif" class="gif">
+  <h2>Happy Kiss Day 💋❤️</h2>
+  <p><b>Yeh rahi tumhari kiss 😘</b></p>
+</div>
+
+<script>
+  const question = document.getElementById("question");
+  const wrongBox = document.getElementById("wrongBox");
+  const rightBox = document.getElementById("rightBox");
+
+  function wrong(){
+    question.classList.add("hidden");
+    wrongBox.classList.remove("hidden");
+  }
+
+  function right(){
+    question.classList.add("hidden");
+    rightBox.classList.remove("hidden");
+  }
+
+  function goBack(){
+    wrongBox.classList.add("hidden");
+    question.classList.remove("hidden");
+  }
+
+  /* 💋 RANDOM KISS RAIN */
+  function createKiss(){
+    const kiss = document.createElement("div");
+    kiss.classList.add("kiss");
+    kiss.innerText = "💋";
+
+    kiss.style.left = Math.random() * 100 + "vw";
+    kiss.style.fontSize = (20 + Math.random() * 30) + "px";
+    kiss.style.animationDuration = (5 + Math.random() * 7) + "s";
+
+    document.body.appendChild(kiss);
+
+    setTimeout(() => {
+      kiss.remove();
+    }, 12000);
+  }
+
+  setInterval(createKiss, 300);
+</script>
+
 </body>
 </html>
+

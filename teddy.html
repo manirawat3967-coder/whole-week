@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Teddy Day</title>
+
+<style>
+  body{
+    margin:0;
+    padding:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffd6e8, #fbc2eb, #f9c5d1);
+    overflow:hidden;
+    text-align:center;
+  }
+
+  /* Top section */
+  .top{
+    padding:20px;
+    position:relative;
+    z-index:5;
+  }
+
+  .top img{
+    width:180px;
+  }
+
+  h1{
+    color:#7a1a6c;
+    margin:10px 0 5px;
+    text-shadow: 0 0 8px rgba(255,105,180,0.5);
+  }
+
+  .from{
+    font-size:14px;
+    color:#444;
+  }
+
+  /* Falling background stickers */
+  .falling span{
+    position:absolute;
+    top:-50px;
+    font-size:30px;
+    animation: fall linear infinite;
+    opacity:0.8;
+  }
+
+  @keyframes fall{
+    to{
+      transform: translateY(110vh) rotate(360deg);
+    }
+  }
+
+  /* Message flow */
+  .message{
+    position:absolute;
+    bottom:-80%;
+    width:100%;
+    padding:20px;
+    font-size:18px;
+    line-height:1.7;
+    color:#4a004a;
+    animation: moveUp 22s ease-out forwards;
+    z-index:5;
+  }
+
+  @keyframes moveUp{
+    from{bottom:-80%;}
+    to{bottom:15%;}
+  }
+</style>
+</head>
+
+<body>
+
+<!-- Falling background stickers -->
+<div class="falling">
+  <span style="left:5%; animation-duration:12s;">🧸</span>
+  <span style="left:18%; animation-duration:15s;">💗</span>
+  <span style="left:32%; animation-duration:10s;">🧸</span>
+  <span style="left:48%; animation-duration:14s;">💕</span>
+  <span style="left:63%; animation-duration:11s;">🧸</span>
+  <span style="left:78%; animation-duration:16s;">💞</span>
+  <span style="left:90%; animation-duration:13s;">🧸</span>
+</div>
+
+<!-- Top content -->
+<div class="top">
+  <!-- sticker image (tum provide karogi) -->
+  <img src="teddySticker.png" alt="sticker">
+
+  <h1>Happy Teddy Day </h1>
+  <div class="from"> from your teddy bear 🧸</div>
+</div>
+
+<!-- Message -->
+<div class="message">
+  Oyee… main tumhari bhalu hun 🧸  
+  aur tum mere teddy… meraaaaa gullluuuuu  
+  tedddyyyyy bearrrrr 🥺💜  
+
+  <br><br>
+  Missing you so much…  
+  isko banate hue tum hi yaad aate rahe meko 😔  
+
+  <br><br>
+   ajaoooo yrrr  
+  kal k promise krdo aj ki aoga tum   🤞  
+  aur ek jhapi de dena meri jaaneman   
+
+  <br><br>
+  <b>I LOVE YOU MY BABYGIRL 😘</b>
+
+  <br><br>
+  Waise to bolne ko bahut kuch rehta hai  
+  par abhi kuch yaad nahi aa raha 😌  
+
+  <br><br>
+  Batao… kaisa lag raha ye sab dekh kar? 💜  
+  <br>
+  baki take care betu 🌸
+</div>
+
+</body>
+</html>
+

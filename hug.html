@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Hug Day</title>
+
+  <style>
+    body{
+      margin:0;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg,#ffe6eb,#ffb3c1);
+      font-family:Arial, sans-serif;
+    }
+
+    .box{
+      background:#fff;
+      padding:25px;
+      border-radius:25px;
+      text-align:center;
+      box-shadow:0 10px 25px rgba(0,0,0,0.2);
+      max-width:340px;
+    }
+
+    h1{
+      color:#ff4d6d;
+      margin-bottom:15px;
+    }
+
+    .hug-gif{
+      width:230px;
+      margin:15px auto;
+      display:block;
+      border-radius:20px;
+    }
+
+    p{
+      color:black;
+      font-size:15px;
+      line-height:1.6;
+    }
+
+    .letter{
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    .hint{
+      font-size:12px;
+      color:gray;
+      margin-left:5px;
+    }
+
+    .hidden-text{
+      display:none;
+      font-size:14px;
+      color:#444;
+      margin:8px 0 15px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <h1>Happy Hug Day 🫂</h1>
+
+  <img src="hug.gif" alt="hug gif" class="hug-gif">
+
+  <p>
+
+    <span class="letter" onclick="showMsg('m1')">
+      Ye meri choti si virtual huggy hai 🤍
+      <span class="hint">(click it)</span>
+    </span>
+    <div id="m1" class="hidden-text">
+      Abhi paas nahi ho to iska matlab ye thodi na hai  
+      ki hum huggy nahi kar sakte 🫂
+    </div>
+
+    <span class="letter" onclick="showMsg('m2')">
+      Ye hai meri jhappi tumhare liye 🫂
+      <span class="hint">(click it)</span>
+    </span>
+    <div id="m2" class="hidden-text">
+      I love youuu betuu 😭🥺  
+      Jhappi chahiye ab 💖
+    </div>
+
+    <span class="letter" onclick="showMsg('m3')">
+      Pata hai mujhe kya yaad aaya 🤭
+      <span class="hint">(click it)</span>
+    </span>
+    <div id="m3" class="hidden-text">
+      Wo din yaad hai jab maine tumhe bola  
+      “oye hug do”  
+      uske baad hum kitna hase the 🤣😂
+    </div>
+
+    <span class="letter" onclick="showMsg('m4')">
+      Chalo hug do ab 🫂
+      <span class="hint">(click it)</span>
+    </span>
+    <div id="m4" class="hidden-text">
+      Fir hasi aa rahi hai 🤭🤣  
+      My love, my man 💖
+    </div>
+
+  </p>
+
+</div>
+
+<script>
+  function showMsg(id){
+    document.getElementById(id).style.display = "block";
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Chocolate Day ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* 🌸 BACKGROUND */
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Comic Sans MS', cursive;
+    background: linear-gradient(135deg,#2b1055,#7597de);
+    overflow:hidden;
+    color:white;
+    text-align:center;
+}
+
+/* 🍫 FALLING CHOCOLATES */
+.choco{
+    position:absolute;
+    top:-50px;
+    font-size:30px;
+    animation: fall linear infinite;
+}
+@keyframes fall{
+    to{
+        transform: translateY(110vh);
+    }
+}
+
+/* 🧸 TOP STICKER */
+#topSticker{
+    width:160px;
+    margin-top:20px;
+}
+
+/* ❤️ TITLE */
+h1{
+    margin:10px 0;
+    font-size:28px;
+    color:#ffd1dc;
+}
+
+/* 🎁 GIFT BOX */
+#gift{
+    width:140px;
+    margin-top:30px;
+    cursor:pointer;
+    transition: transform 0.3s;
+}
+
+/* 🎭 ILLUSION */
+.shake{
+    animation: shake 0.4s;
+}
+@keyframes shake{
+    0%{transform:translateX(0);}
+    25%{transform:translateX(-20px);}
+    50%{transform:translateX(20px);}
+    75%{transform:translateX(-15px);}
+    100%{transform:translateX(0);}
+}
+
+/* 🍬 SPLASH */
+#splash{
+    display:none;
+    font-size:40px;
+    animation: pop 1s ease;
+}
+@keyframes pop{
+    0%{transform:scale(0);}
+    100%{transform:scale(1);}
+}
+
+/* 💌 MESSAGE */
+#message{
+    display:none;
+    margin:20px;
+    font-size:16px;
+    line-height:1.6;
+    color:#fff5f7;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🍫 FALLING CHOCOLATES -->
+<script>
+for(let i=0;i<30;i++){
+    let c=document.createElement("div");
+    c.className="choco";
+    c.innerHTML="🍫";
+    c.style.left=Math.random()*100+"vw";
+    c.style.animationDuration=(3+Math.random()*5)+"s";
+    document.body.appendChild(c);
+}
+</script>
+
+<!-- 🧸 STICKER -->
+<img id="topSticker" src="sticker_chocolate_top.png" alt="Sticker">
+
+<h1>💖 Happy Chocolate Day Betu ❤️</h1>
+
+<!-- 🎁 GIFT -->
+<img id="gift" src="https://cdn-icons-png.flaticon.com/512/3468/3468370.png">
+
+<div id="splash">🍫🍬🍫🍬</div>
+
+<div id="message">
+<p>
+Mujhe pata hai tusi khush ho isko dekh kar 😌  
+aur mujhe aur zyada maza aa raha hai yeh batao? 💕  
+</p>
+
+<p>
+Waise aaj Chocolate Day hai aur isse yaad aaya ki  
+har chocolate humne saath me khayi hai 🍫  
+toh akela akela mat khana haan…  
+chocolate hi nahi aur cheezein bhi 😏  
+</p>
+
+<p>
+Waise khane ki baat aa hi gayi hai toh  
+mera favourite khana toh aap ho poora 🙈  
+</p>
+
+<p>
+😳 motu khajau tumko  
+mera gulab jamun jaisi dikhne wali **GULABOO** 💗  
+ohh gulabooo zara itr gira do 💃  
+</p>
+
+<p style="font-size:20px;">
+I LOVVVVEEEE YOUUUUUU  
+MMMYYYY MITHHIIIIIII 😘😘
+</p>
+</div>
+
+<script>
+let count=0;
+const gift=document.getElementById("gift");
+const splash=document.getElementById("splash");
+const message=document.getElementById("message");
+
+gift.onclick=function(){
+    if(count<5){
+        gift.classList.add("shake");
+        setTimeout(()=>gift.classList.remove("shake"),400);
+        count++;
+    }else{
+        gift.style.display="none";
+        splash.style.display="block";
+        setTimeout(()=>{
+            splash.style.display="none";
+            message.style.display="block";
+        },1200);
+    }
+}
+</script>
+
+</body>
+</html>
